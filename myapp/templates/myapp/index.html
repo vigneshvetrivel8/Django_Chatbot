@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chatbot Demo</title>
+    <!-- Add your CSS and styling -->
+    <style>
+        /* CSS styles for chat interface */
+        .chat-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chat-container h1, .chat-container h2 {
+            font-family: Arial, sans-serif;
+        }
+        .chat-container form {
+            margin-bottom: 20px;
+        }
+        .chat-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .chat-container input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .chat-container button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .chat-container button:hover {
+            background-color: #45a049;
+        }
+        .chat-container .chat-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Chatbot Demo</h1>
+        {% if answer %}
+            <div class="chat-box">
+                <p><strong>Bot:</strong> {{ answer }}</p>
+            </div>
+        {% endif %}
+        <form method="post">
+            {% csrf_token %}
+            <label for="question">Your Question:</label>
+            <input type="text" id="question" name="question">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

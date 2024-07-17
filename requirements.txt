@@ -1,0 +1,5 @@
+langchain_google_genai
+pypdf
+pinecone-client
+langchain
+langchain_community
